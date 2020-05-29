@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Signin extends React.Component {
-  constructor(props) {
+  constructor(props) {//in order to use props, we need to insert props here
     super(props);
     this.state = {
       signInEmail: '',
@@ -28,7 +28,7 @@ class Signin extends React.Component {
     })
       .then(response => response.json())
       .then(user => {
-        if (user.id) {
+        if (user.id) {//can't use if (user) cause everything can feedback would be true
           this.props.loadUser(user)
           this.props.onRouteChange('home');
         }
@@ -83,3 +83,5 @@ class Signin extends React.Component {
 }
 
 export default Signin;
+
+//htmlFor for jsx, original is for of html

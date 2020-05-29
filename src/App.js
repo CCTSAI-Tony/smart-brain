@@ -9,6 +9,7 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 
+
 const particlesOptions = {
   particles: {
     number: {
@@ -25,8 +26,8 @@ const initialState = {
   input: '',
   imageUrl: '',
   box: {},
-  route: 'signin',
-  isSignedIn: false,
+  route: 'signin',//keeps track of where we are on the page,conditional statement
+  isSignedIn: false, // 不能"false" 視為true
   user: {
     id: '',
     name: '',
@@ -54,7 +55,7 @@ class App extends Component {
 
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-    const image = document.getElementById('inputimage');
+    const image = document.getElementById('inputimage'); //dom manipulation
     const width = Number(image.width);
     const height = Number(image.height);
     return {
@@ -74,7 +75,8 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    this.setState({imageUrl: this.state.input});
+
+    this.setState({imageUrl: this.state.input});//this.state.imageUrl 不能直接當作api input, 因為this.setState 的關係 影片254
       fetch('http://localhost:3000/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
@@ -94,7 +96,8 @@ class App extends Component {
           })
             .then(response => response.json())
             .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count}))
+              this.setState(Object.assign(this.state.user, { entries: count}))//替換this.state.user裡面的entries
+              //不能直接this.setState(users:{entries: count}) 會直接替換整個user object
             })
             .catch(console.log)
 
@@ -106,7 +109,7 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if (route === 'signout') {
-      this.setState(initialState)
+      this.setState(initialState)//replaced with initialSte object to back to default
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
     }
@@ -121,7 +124,7 @@ class App extends Component {
           params={particlesOptions}
         />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        { route === 'home'
+        { route === 'home'//upder jsx, use {} 可以使用javascript 語法, ? : if else, 多重元素需要<div> wrap it
           ? <div>
               <Logo />
               <Rank

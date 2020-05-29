@@ -13,3 +13,6 @@ const FaceRecognition = ({ imageUrl, box }) => {
 }
 
 export default FaceRecognition;
+
+//absolute mt2, a bit of space in between the input, margin top
+//width='500px' heigh='auto'/, auto 依比例自動挑整

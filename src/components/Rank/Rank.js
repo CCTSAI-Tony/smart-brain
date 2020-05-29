@@ -14,3 +14,5 @@ const Rank = ({ name, entries }) => {
 }
 
 export default Rank;
+
+//command control g 可以一次性修改同樣variable name

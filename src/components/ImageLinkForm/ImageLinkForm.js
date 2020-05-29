@@ -1,6 +1,7 @@
 import React from 'react';
 import './ImageLinkForm.css';
 
+//if we don't desturcture, we need to const ImageLinkForm = ( props.onInputChange, props.onButtonSubmit )
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div>
@@ -21,3 +22,5 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
 }
 
 export default ImageLinkForm;
+
+// {'This Magic Brain will detect faces in your pictures. Git it a try.'} using javascript, so wraped in curly brackets
