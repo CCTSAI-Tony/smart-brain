@@ -77,7 +77,7 @@ class App extends Component {
   onButtonSubmit = () => {
 
     this.setState({imageUrl: this.state.input});//this.state.imageUrl 不能直接當作api input, 因為this.setState 的關係 影片254
-      fetch('http://localhost:3000/imageurl', {
+      fetch('https://fathomless-anchorage-40366.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -87,7 +87,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://fathomless-anchorage-40366.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
