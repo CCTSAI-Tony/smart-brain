@@ -124,7 +124,7 @@ class App extends Component {
           params={particlesOptions}
         />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        { route === 'home'//upder jsx, use {} 可以使用javascript 語法, ? : if else, 多重元素需要<div> wrap it
+        { route === 'home'//under jsx, use {} 可以使用javascript 語法, ? : if else, 多重元素需要<div> wrap it
           ? <div>
               <Logo />
               <Rank
