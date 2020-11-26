@@ -19,7 +19,7 @@ I'm happy to accept more configurability and features. PR welcome! What you see 
 
 #### Paste picture link
 
-<img src="https://github.com/CCTSAI-Tony/robofriends/blob/master/face.png" width="532">
+<img src="https://github.com/CCTSAI-Tony/smart-brain/blob/master/face.png" width="532">
 
 ## To run web server locally, run the following commands.
 
