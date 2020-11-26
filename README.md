@@ -1,5 +1,5 @@
 <div align="center">
-	<img width="900" src="https://github.com/CCTSAI-Tony/smart-brain/blob/master/logo.png" alt="robofriendsl">
+	<img width="900" src="https://github.com/CCTSAI-Tony/smart-brain/blob/master/logo.png" alt="smart-brain">
 	<br>
 </div>
 
